@@ -3,14 +3,14 @@ from ringo.model import Base
 from ringo.model.base import BaseItem, BaseFactory
 
 
-class ExtensionFactory(BaseFactory):
+class ContactFactory(BaseFactory):
 
     def create(self, user=None):
         new_item = BaseFactory.create(self, user)
         return new_item
 
 
-class Extension(BaseItem, Base):
+class Contact(BaseItem, Base):
     """Docstring for contact extension"""
 
     __tablename__ = 'contacts'
@@ -26,4 +26,4 @@ class Extension(BaseItem, Base):
 
     @classmethod
     def get_item_factory(cls):
-        return ExtensionFactory(cls)
+        return ContactFactory(cls)

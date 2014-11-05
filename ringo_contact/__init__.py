@@ -4,7 +4,7 @@ from ringo.lib.helpers import dynamic_import
 
 # Import models so that alembic is able to autogenerate migrations
 # scripts.
-from ringo_contact.model import Extension
+from ringo_contact.model import Contact
 
 log = logging.getLogger(__name__)
 
@@ -26,4 +26,4 @@ def includeme(config):
 
     """
     modul = register_modul(config, modul_config)
-    Extension._modul_id = modul.get_value("id")
+    Contact._modul_id = modul.get_value("id")
