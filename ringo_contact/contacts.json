@@ -1,7 +1,10 @@
 {
     "overview": {
         "columns": [
-            {"name": "id", "label": "ID"}
+            {"name": "fn", "label": "Fullname"},
+            {"name": "gender", "label": "Gender", "expand": true, "width": "100", "screen": "large"},
+            {"name": "bday", "label": "Birthdate", "width": "100", "screen": "xlarge"},
+            {"name": "org", "label": "Organisation", "width": "200", "screen": "medium"}
         ]
     }
 }

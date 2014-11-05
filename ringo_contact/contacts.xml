@@ -1,8 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <configuration xmlns:i18n="http://xml.zope.org/namespaces/i18n" i18n:domain="contact">
   <source>
-    <!-- Define different entity types -->
-    <entity id="e1" name="dummy" label="Dummy" type="string"/>
+    <!-- Basic data -->
+    <entity id="fn" name="fn" label="Full Name" required="true"/>
+    <entity id="title" name="title" label="Title"/>
+    <entity id="org" name="org" label="Organisation"/>
+    <entity id="role" name="role" label="Role"/>
+    <entity id="bday" name="bday" label="Birthdate" type="date"/>
+    <entity id="gender" name="gender" label="Gender" type="integer">
+      <renderer type="dropdown"/>
+      <options>
+        <option value="">not specified</option>
+        <option value="0">female</option>
+        <option value="1">male</option>
+      </options>
+    </entity>
+    <entity id="note" name="note" label="Notes">
+      <renderer type="textarea"/>
+    </entity>
+    <!-- Address -->
+    <entity id="postcode" name="postcode" label="Postal Code" type="string"/>
+    <entity id="city" name="city" label="City" type="string"/>
+    <entity id="street" name="street" label="Street" type="string"/>
+    <!-- Contact -->
+    <entity id="url" name="url" label="Webseite" type="string"/>
+    <entity id="phone" name="phone" label="Phone" type="string"/>
+    <entity id="email" name="email" label="Email" type="email"/>
   </source>
   <form id="create" autocomplete="off" method="POST" action="" enctype="multipart/form-data">
     <snippet ref="create_snippet"/>
@@ -14,15 +37,51 @@
     <snippet ref="create_snippet"/>
   </form>
 
-  <!-- Create-->
   <snippet id="create_snippet">
-    <snippet ref="s1"/>
+    <snippet ref="basic"/>
+    <snippet ref="address"/>
+    <snippet ref="contact"/>
   </snippet>
 
-  <!-- Role -->
-  <snippet id="s1">
+  <snippet id="basic">
     <row>
-      <col><field ref="e1"/></col>
+      <col><field ref="fn"/></col>
     </row>
+    <row>
+      <col><field ref="bday"/></col>
+      <col><field ref="gender"/></col>
+    </row>
+    <row>
+      <col width="3"><field ref="title"/></col>
+      <col width="6"><field ref="org"/></col>
+      <col width="3"><field ref="role"/></col>
+    </row>
+    <row>
+      <col><field ref="note"/></col>
+    </row>
+  </snippet>
+  <snippet id="address">
+    <section label="Address">
+    <row>
+      <col><field ref="postcode"/></col>
+      <col><field ref="city"/></col>
+    </row>
+    <row>
+      <col><field ref="street"/></col>
+    </row>
+    </section>
+  </snippet>
+  <snippet id="contact">
+    <section label="Contact">
+    <row>
+      <col><field ref="phone"/></col>
+    </row>
+    <row>
+      <col><field ref="email"/></col>
+    </row>
+    <row>
+      <col><field ref="url"/></col>
+    </row>
+    </section>
   </snippet>
 </configuration>
