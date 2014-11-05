@@ -10,11 +10,11 @@ log = logging.getLogger(__name__)
 
 modul_config = {
     "name": "contact",
-    "label": "",
-    "clazzpath": "ringo_contact.model.Extension",
-    "label_plural": "",
-    "str_repr": "",
-    "display": "",
+    "label": "Contact",
+    "clazzpath": "ringo_contact.model.Contact",
+    "label_plural": "Contacts",
+    "str_repr": "%s|fn",
+    "display": "user-menu",
     "actions": ["list", "read", "update", "create", "delete"]
 }
 
