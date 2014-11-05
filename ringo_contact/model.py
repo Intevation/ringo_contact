@@ -21,8 +21,22 @@ class Contact(BaseItem, Base):
 
     # Define columns of the table in the database
     id = sa.Column(sa.Integer, primary_key=True)
+    title = sa.Column(sa.String)
+    fn = sa.Column(sa.String)
+    org = sa.Column(sa.String)
+    role = sa.Column(sa.String)
+    bday = sa.Column(sa.Date)
+    gender = sa.Column(sa.Integer)
 
-    # Define relations to other tables
+    postcode = sa.Column(sa.String)
+    city = sa.Column(sa.String)
+    street = sa.Column(sa.String)
+
+    phone = sa.Column(sa.String)
+    email = sa.Column(sa.String)
+    url = sa.Column(sa.String)
+
+    note = sa.Column(sa.Text)
 
     @classmethod
     def get_item_factory(cls):
