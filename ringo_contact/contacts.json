@@ -4,7 +4,7 @@
             {"name": "first_name", "label": "First Name"},
             {"name": "last_name", "label": "Last Name"},
             {"name": "gender", "label": "Gender", "expand": true, "width": "100", "screen": "large"},
-            {"name": "bday", "label": "Birthdate", "width": "100", "screen": "xlarge"},
+            {"name": "bday", "label": "Birthday", "width": "100", "screen": "xlarge"},
             {"name": "organisation", "label": "Organisation", "width": "200", "screen": "medium"}
         ]
     }

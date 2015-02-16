@@ -7,7 +7,7 @@
     <entity id="title" name="title" label="Title"/>
     <entity id="organisation" name="organisation" label="Organisation"/>
     <entity id="role" name="role" label="Role"/>
-    <entity id="bday" name="bday" label="Birthdate" type="date"/>
+    <entity id="bday" name="bday" label="Birthday" type="date"/>
     <entity id="gender" name="gender" label="Gender" type="integer">
       <renderer type="dropdown"/>
       <options>
