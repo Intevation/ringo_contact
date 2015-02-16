@@ -2,9 +2,10 @@
 <configuration xmlns:i18n="http://xml.zope.org/namespaces/i18n" i18n:domain="contact">
   <source>
     <!-- Basic data -->
-    <entity id="fn" name="fn" label="Full Name" required="true"/>
+    <entity id="first_name" name="first_name" label="First Name" required="true"/>
+    <entity id="last_name" name="last_name" label="Last Name" required="true"/>
     <entity id="title" name="title" label="Title"/>
-    <entity id="org" name="org" label="Organisation"/>
+    <entity id="organisation" name="organisation" label="Organisation"/>
     <entity id="role" name="role" label="Role"/>
     <entity id="bday" name="bday" label="Birthdate" type="date"/>
     <entity id="gender" name="gender" label="Gender" type="integer">
@@ -19,7 +20,7 @@
       <renderer type="textarea"/>
     </entity>
     <!-- Address -->
-    <entity id="postcode" name="postcode" label="Postal Code" type="string"/>
+    <entity id="postalcode" name="postcode" label="Postal Code" type="string"/>
     <entity id="city" name="city" label="City" type="string"/>
     <entity id="street" name="street" label="Street" type="string"/>
     <!-- Contact -->
@@ -45,7 +46,8 @@
 
   <snippet id="basic">
     <row>
-      <col><field ref="fn"/></col>
+      <col><field ref="first_name"/></col>
+      <col><field ref="last_name"/></col>
     </row>
     <row>
       <col><field ref="bday"/></col>
@@ -53,7 +55,7 @@
     </row>
     <row>
       <col width="3"><field ref="title"/></col>
-      <col width="6"><field ref="org"/></col>
+      <col width="6"><field ref="organisation"/></col>
       <col width="3"><field ref="role"/></col>
     </row>
     <row>
@@ -63,7 +65,7 @@
   <snippet id="address">
     <section label="Address">
     <row>
-      <col><field ref="postcode"/></col>
+      <col><field ref="postalcode"/></col>
       <col><field ref="city"/></col>
     </row>
     <row>
