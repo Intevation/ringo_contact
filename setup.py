@@ -25,5 +25,16 @@ setup(name='ringo_contact',
       ],
       entry_points="""
       # -*- Entry points: -*-
-      """,
+      [babel.extractors]
+          tableconfig = ringo.lib.i18n:extract_i18n_tableconfig
+          formconfig = formbar.i18n:extract_i18n_formconfig
+          """,
+          message_extractors = {'ringo_contact': [
+                ('**.py', 'python', None),
+                ('**.html', 'mako', None),
+                ('**.mako', 'mako', None),
+                ('**.xml', 'formconfig', None),
+                ('**.json', 'tableconfig', None),
+                ('static/**', 'ignore', None)]},
+
       )
