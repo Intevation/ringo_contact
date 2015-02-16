@@ -1,5 +1,6 @@
 import sqlalchemy as sa
 from ringo.model import Base
+from ringo.model.mixins import Meta, Owned
 from ringo.model.base import BaseItem, BaseFactory
 
 
@@ -10,7 +11,7 @@ class ContactFactory(BaseFactory):
         return new_item
 
 
-class Contact(BaseItem, Base):
+class Contact(BaseItem, Meta, Owned, Base):
     """Docstring for contact extension"""
 
     __tablename__ = 'contacts'
@@ -21,22 +22,22 @@ class Contact(BaseItem, Base):
 
     # Define columns of the table in the database
     id = sa.Column(sa.Integer, primary_key=True)
-    title = sa.Column(sa.String)
-    fn = sa.Column(sa.String)
-    org = sa.Column(sa.String)
-    role = sa.Column(sa.String)
+    title = sa.Column(sa.String, nullable=False, default="")
+    fn = sa.Column(sa.String, nullable=False, default="")
+    org = sa.Column(sa.String, nullable=False, default="")
+    role = sa.Column(sa.String, nullable=False, default="")
     bday = sa.Column(sa.Date)
-    gender = sa.Column(sa.Integer)
+    gender = sa.Column(sa.Integer, nullable=False, default="")
 
-    postcode = sa.Column(sa.String)
-    city = sa.Column(sa.String)
-    street = sa.Column(sa.String)
+    postalcode = sa.Column(sa.String, nullable=False, default="")
+    city = sa.Column(sa.String, nullable=False, default="")
+    street = sa.Column(sa.String, nullable=False, default="")
 
-    phone = sa.Column(sa.String)
-    email = sa.Column(sa.String)
-    url = sa.Column(sa.String)
+    phone = sa.Column(sa.String, nullable=False, default="")
+    email = sa.Column(sa.String, nullable=False, default="")
+    url = sa.Column(sa.String, nullable=False, default="")
 
-    note = sa.Column(sa.Text)
+    note = sa.Column(sa.Text, nullable=False, default="")
 
     @classmethod
     def get_item_factory(cls):
