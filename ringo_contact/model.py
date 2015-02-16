@@ -1,3 +1,4 @@
+from sqlalchemy.ext.declarative import declared_attr
 import sqlalchemy as sa
 from ringo.model import Base
 from ringo.model.mixins import Meta, Owned
@@ -43,3 +44,20 @@ class Contact(BaseItem, Meta, Owned, Base):
     @classmethod
     def get_item_factory(cls):
         return ContactFactory(cls)
+
+
+class Contactable(object):
+    """Mixin to make items of other modules contactable. This means the
+    will get a relation named contacts."""
+
+    @declared_attr
+    def contacts(cls):
+        clsname = cls.__name__.lower()
+        tbl_name = "nm_%s_contacts" % clsname
+        nm_table = sa.Table(tbl_name, Base.metadata,
+                            sa.Column('%s_id' % clsname, sa.Integer,
+                                      sa.ForeignKey(cls.id)),
+                            sa.Column('contact_id', sa.Integer,
+                                      sa.ForeignKey("contacts.id")))
+        contacts = sa.orm.relationship(Contact, secondary=nm_table)
+        return contacts
