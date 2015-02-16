@@ -23,11 +23,12 @@ class Contact(BaseItem, Meta, Owned, Base):
     # Define columns of the table in the database
     id = sa.Column(sa.Integer, primary_key=True)
     title = sa.Column(sa.String, nullable=False, default="")
-    fn = sa.Column(sa.String, nullable=False, default="")
-    org = sa.Column(sa.String, nullable=False, default="")
+    first_name = sa.Column(sa.String, nullable=False, default="")
+    last_name = sa.Column(sa.String, nullable=False, default="")
+    organisation = sa.Column(sa.String, nullable=False, default="")
     role = sa.Column(sa.String, nullable=False, default="")
-    bday = sa.Column(sa.Date)
-    gender = sa.Column(sa.Integer, nullable=False, default="")
+    birtday = sa.Column(sa.Date)
+    gender = sa.Column(sa.Integer)
 
     postalcode = sa.Column(sa.String, nullable=False, default="")
     city = sa.Column(sa.String, nullable=False, default="")
