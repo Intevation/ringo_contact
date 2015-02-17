@@ -36,6 +36,7 @@ class Contact(BaseItem, Meta, Owned, Base):
     street = sa.Column(sa.String, nullable=False, default="")
 
     phone = sa.Column(sa.String, nullable=False, default="")
+    fax = sa.Column(sa.String, nullable=False, default="")
     email = sa.Column(sa.String, nullable=False, default="")
     url = sa.Column(sa.String, nullable=False, default="")
 
