@@ -7,8 +7,8 @@ from ringo.model.base import BaseItem, BaseFactory
 
 class ContactFactory(BaseFactory):
 
-    def create(self, user=None):
-        new_item = BaseFactory.create(self, user)
+    def create(self, user, values):
+        new_item = BaseFactory.create(self, user, values)
         return new_item
 
 
