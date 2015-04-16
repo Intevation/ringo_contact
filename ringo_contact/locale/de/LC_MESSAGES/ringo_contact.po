@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ringo_contact 0.0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-02-16 23:02+0100\n"
+"POT-Creation-Date: 2015-04-16 12:57+0200\n"
 "PO-Revision-Date: 2015-02-16 23:05+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de <LL@li.org>\n"
@@ -34,19 +34,19 @@ msgstr "Nachname"
 #. Label for gender field in form config
 #: ringo_contact/contacts.json:4 ringo_contact/contacts.xml:7
 msgid "Gender"
-msgstr ""
+msgstr "Geschlecht"
 
 #. Label for bday column in overview table config
 #. Label for bday field in form config
 #: ringo_contact/contacts.json:5 ringo_contact/contacts.xml:6
 msgid "Birthday"
-msgstr ""
+msgstr "Geburtsdatum"
 
 #. Label for organisation column in overview table config
 #. Label for organisation field in form config
 #: ringo_contact/contacts.json:6 ringo_contact/contacts.xml:4
 msgid "Organisation"
-msgstr ""
+msgstr "Organisation"
 
 #. Label for title field in form config
 #: ringo_contact/contacts.xml:3
@@ -86,30 +86,30 @@ msgstr ""
 #. Label for phone field in form config
 #: ringo_contact/contacts.xml:13
 msgid "Phone"
-msgstr ""
+msgstr "Telefon"
 
 #. Label for email field in form config
 #: ringo_contact/contacts.xml:14
 msgid "Email"
-msgstr ""
+msgstr "E-Mail"
 
 #: ringo_contact/contacts.xml:15
 msgid "Address"
-msgstr ""
+msgstr "Adresse"
 
 #: ringo_contact/contacts.xml:16
 msgid "Contact"
-msgstr ""
+msgstr "Kontakt"
 
 #: ringo_contact/contacts.xml:17
 msgid "not specified"
-msgstr ""
+msgstr "keine Angabe"
 
 #: ringo_contact/contacts.xml:18
 msgid "female"
-msgstr ""
+msgstr "weiblich"
 
 #: ringo_contact/contacts.xml:19
 msgid "male"
-msgstr ""
+msgstr "männlich"
 
