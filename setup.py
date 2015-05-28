@@ -15,6 +15,7 @@ setup(name='ringo_contact',
       packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
       include_package_data=True,
       zip_safe=False,
+      setup_requires=['hgtools'],
       install_requires=[
           'ringo'
       ],
