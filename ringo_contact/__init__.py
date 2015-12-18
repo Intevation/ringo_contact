@@ -27,11 +27,8 @@ def includeme(config):
     :config: Dictionary with configuration of the new modul
 
     """
-    #
-    # Module temporarily deactivated.
-    #
-    # modul = register_modul(config, modul_config)
-    # Contact._modul_id = modul.get_value("id")
-    # translators.append(TranslationStringFactory('ringo_contact'))
-    # config.add_translation_dirs('ringo_contact:locale/')
-    pass
+    modul = register_modul(config, modul_config)
+    if modul is not None:
+        Contact._modul_id = modul.get_value("id")
+        translators.append(TranslationStringFactory('ringo_contact'))
+        config.add_translation_dirs('ringo_contact:locale/')
