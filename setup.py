@@ -3,7 +3,7 @@ import sys, os
 
 
 setup(name='ringo_contact',
-      version= '0.2',
+      version= '0.3',
       description="Contact extension for the ringo webframework",
       long_description="""""",
       classifiers=[
